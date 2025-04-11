@@ -12,7 +12,9 @@ $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$result = $conn->query("SELECT name, email FROM users");
+// Fetch users
+$sql = "SELECT name, email FROM users";
+$result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     echo "<ul>";
